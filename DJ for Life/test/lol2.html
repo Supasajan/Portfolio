@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>MASTER DJ</title>
+
+	<link rel="shortcut icon" href="vinyl.png">
+
+
+	
+
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+// This adds a listener for when the page is ready, and then runs the script in the function below
+$(document).ready(function () {
+
+	// Here we're assigning our buttons to the variables "back" and "forward"
+var back = $('.backbutton');
+var forward = $('.forwardbutton');
+
+var touchdown = false;
+// And here we're assigning the wrapper to the varaible "wrap"
+var wrap = $('#montage-wrap');
+  // This is where all of our javascript it going to go
+  // This adds an event listener for mouse down
+forward.mousedown(function () {
+  	touchdown = true;
+  	// This returns the current scroll left position of your wrapper
+  	scrollLeftAnimated();
+});
+
+function scrollLeftAnimated() {
+
+	// This returns the current scroll left position of your wrapper
+  	if (touchdown) {
+  		var scrollLeft = wrap.scrollLeft();
+
+  		// This sets the scroll left to be a little further along
+  		wrap.animate({scrollLeft : (scrollLeft + 200)}, 300);
+
+  		setTimeout(function() { scrollLeftAnimated(); }, 400);
+	}
+
+}
+
+forward.mouseup(function () {
+	touchdown = false;
+});
+
+
+back.mousedown(function () {
+	touchdown= true;
+ 	scrollRightAnimated();
+});
+
+
+function scrollRightAnimated() {
+	// This returns the current scroll left position of your wrapper
+	if (touchdown) {
+  		var scrollLeft = wrap.scrollLeft();
+
+  		// This sets the scroll left to be a little further along
+  		wrap.animate({scrollLeft : (scrollLeft - 200)}, 300);
+ 		setTimeout(function() { scrollRightAnimated(); }, 400);
+	}
+}
+
+back.mouseup(function () {
+	touchdown = false;
+});
+
+
+});
+</script>
+
+  
+
+
+
+	<style type="text/css">
+	body { font: 13px sans-serif; overflow-y: hidden; }
+
+	@font-face {
+    font-family: MoonHouse;
+    src: url(moonhouse.ttf) }
+
+    #imglogo{
+
+    	margin: 0 auto;
+    	background-image:url("masterdj.jpg");
+    	height: 200px;
+    	width: 200px;
+    	background-size: cover;
+    	display:block;
+    }
+
+    @media all and (min-width: 480px) {
+    	#imglogo{
+    		width: 300px;
+    		height: 300px;
+    	}
+    }
+
+
+	#logo{
+
+		padding-left: 40%;
+		text-align: center;
+		position:fixed;
+		font-family: 'Helvetica';
+		text-shadow: 2px 3px #ff0000;
+		font-size:60px;
+		padding-top:50px; 
+		font-weight: bold;
+		
+
+	}
+
+	#montage-wrap { 
+		white-space: nowrap;
+		width: 100%; 
+		margin:auto;  
+		overflow-x: auto; 
+		overflow-y: hidden; 
+		position:relative; 
+	}
+
+	.button {
+		position:absolute;
+		top:10px;
+		width:35px;
+		height:35px;
+		z-index:0;
+	}
+
+	.backbutton {
+		transform: rotate(180deg);
+		left:0;
+
+	}
+	.forwardbutton {
+		right:0;
+	}
+
+	.montage-block { 
+		white-space: normal;
+		display: inline-block;
+		width: 320px; 
+		height: 340px;
+		overflow: hidden; 
+		position:relative; 
+		padding-left: 1px; 
+	}
+
+		@media all and (min-width:480px) {
+		.montage-block {
+			width:586px;
+			height:600px;
+		}
+	}
+
+
+	#block1 {background-image: url("rik.jpg")  ;}
+
+	#block2 {background-image: url("ellaskins.jpg")  ;}
+
+	#block3 {background-image: url("joahim.jpg")  ;}
+
+	#block4 {background-image: url("maneken.jpg")  ;}
+
+	#block5 {background-image: url("pucuy.jpg")  ;}
+
+	#block6 {background-image: url("morillo.jpg")  ;}
+
+	#block7 {background-image: url("bureen.jpg")  ;}
+
+	#block8 {background-image: url("yamato.jpg")  ;}
+
+		.block {width: 100%; height: 100%; position:absolute; display:block; border:none;
+		transition:	.5s ease-in-out; background-size:cover; background-repeat: no-repeat; }
+
+
+
+
+	.montage-block:hover .block	{ margin-top: -550px; }	
+	
+	.thumb_content1	{ padding: 250px 15px 0 15px; color: #777; background-image:url("parkinson.jpg"); background-repeat:no-repeat; }
+  .thumb_content2 { padding: 250px 15px 0 15px; color: #777; background-image:url("garraund.jpg"); background-repeat:no-repeat; }
+
+	.thumb_content	{ padding: 250px 15px 0 15px; color: #777; background-image:url(""); background-repeat:no-repeat; }
+	.thumb_content h1	{ margin: 50 0 5px 0; color: #666; font-size: 14px; }
+
+
+/*	body, html{
+    height:100%;
+}
+body{
+    padding:0;
+    margin:0;
+}*/
+h1, p, li{
+    font-family:'helvetica neue', helvetica, arial, sans-serif;
+    color:#222;
+    margin:0 0 1em;
+}
+.section li{
+    margin:0 0 10px;
+}
+/*h1{
+    font-size:2.5em;
+    font-weight:300;
+}
+p{
+    font-size:1em;
+    line-height:1.5em;
+}
+.wrapper{
+    overflow:hidden;
+}*/
+.section{
+	position:relative;
+    padding:0;
+    padding-top: 60px;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+
+}
+
+.section:first-of-type {
+	padding-top: 0;
+}
+nav{
+	z-index:999;
+    position:fixed;
+    top:0;
+    left:0;
+    width:250px;
+    height:100%;
+    margin:0 0 0 -250px;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+}
+nav ul{
+    width:250px;
+    height:100%;
+    padding:0;
+    margin:0;
+    list-style:none;
+    background:#222;
+    overflow:hidden;
+}
+nav li{
+    margin:0;
+}
+nav a{
+    color:#fff;
+    font-size:1em;
+    font-family:'helvetica neue', helvetica, arial, sans-serif;
+    text-decoration:none;
+    display:block;
+    padding:12px 15px;
+    font-weight:300;
+    letter-spacing:2px;
+    border-bottom:1px solid #333;
+}
+nav a:hover{
+    background:#111;
+}
+label{
+    display:block;
+    font-family:'helvetica neue', helvetica, arial, sans-serif;
+    font-weight:700;
+    background:#262626;
+    width:42px;
+    height:42px;
+    line-height:42px;
+    color:#fff;
+    text-align:center;
+    font-size:2em;
+    line-height:1.1em;
+    position:fixed;
+    top:10px;
+    left:10px;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+    z-index:500;
+}
+
+/*.footer{
+    text-align: center;
+    width:100%;
+    height:5%;
+    background-color: grey;
+}*/
+input[type="checkbox"]{
+    display:none;
+}
+input[type="checkbox"]:checked ~ nav{
+    margin:0;
+}
+input[type="checkbox"]:checked ~ label{
+    left:260px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+input[type="checkbox"]:checked ~ .section{
+    -webkit-transform:translate3d(260px, 0, 0);
+    -moz-transform:translate3d(260px, 0, 0);
+    -o-transform:translate3d(260px, 0, 0);
+    transform:translate3d(260px, 0, 0);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;*/
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+.content{
+	font-size: 15px;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+
+
+
+	</style>
+
+</head>
+<body>
+
+
+
+<input type="checkbox" id="navigation" />
+    <label for="navigation">
+        ->
+    </label>
+    <button type="button" class="menu-button"> MENU</button>
+
+    <nav>
+        <ul>
+            <li>
+
+            	
+
+                <a href="#popup1">Home</a>
+
+                <div id="popup1" class="overlay">
+    				<div class="popup">
+    			<h2>HOME</h2>
+    			<br>
+    			<a class="close" href="#">&times;</a>
+                <div class="content">
+            This website is dedicated to all the best DJ on the world.
+            <br>
+            You will find a lot of precious information here about the DJ's and about their music.
+            <br>
+            Hope you will find a place for yourself here.
+       			 </div>
+
+
+                </div>
+                	</div>
+            </li>
+            <li>
+                <a href="#popup2">Latest News</a>
+
+                <div id="popup2" class="overlay">
+    				<div class="popup">
+    			<h2>LATEST NEWS</h2>
+    			<br>
+    			<a class="close" href="#">&times;</a>
+                <div class="content">
+            DJ news from all around the globe
+            <br>
+            Information of the freshest events.
+            <br>
+            Hope you will find a place for yourself here.
+       			 </div>
+
+            </li>
+            <li>
+                <a href="#popup3">What We Do</a>
+
+                <div id="popup3" class="overlay">
+    				<div class="popup">
+    			<h2>WHAT WE DO</h2>
+    			<br>
+    			<a class="close" href="#">&times;</a>
+                <div class="content">
+            We would like to favourise and promote best DJ only!
+            <br>
+            We look at their technical skills their style!
+            <br>
+            Hope you will find a place for yourself here.
+       			 </div>
+
+            </li>
+            <li>
+                <a href="#popup4">Another Link</a>
+
+                <div id="popup4" class="overlay">
+    				<div class="popup">
+    			<h2>ANOTHER LINK</h2>
+    			<br>
+    			<a class="close" href="#">&times;</a>
+                <div class="content">
+            Links, links and more links
+            <br>
+            Reccomended websites
+            <br>
+            Hope you will find a place for yourself here.
+       			 </div>
+
+            </li>
+            <li>
+                <a href="#popup5">Contact</a>
+
+                <div id="popup5" class="overlay">
+    				<div class="popup">
+    			<h2>CONTACT</h2>
+    			<br>
+    			<a class="close" href="#">&times;</a>
+                <div class="content">
+            Please contact us via email: 
+            <br><br>
+            masterdj@masterdj.com
+            <br><br>
+            Or use the contact form below:
+            <br><br>
+            Hope you will find a place for yourself here.
+       			 </div>
+
+            </li>
+        </ul>
+    </nav>
+
+<section class="section">
+<div id="imglogo"></div>
+</section>    
+
+<section class ="section">
+
+	<img class="button backbutton" src="fastforward.svg">
+
+	<img class="button forwardbutton" src="fastforward.svg">
+
+<div id="montage-wrap">
+
+	
+
+	<div class="montage-block">
+
+		<span class="block" id="block1"></span>
+			<div id="thumb_content" class="thumb_content1">
+			<h1>RIK PARKINSON</h1>
+			<p>He is one of the heads of Pioneer DJ's. Living in the UK.</p>
+			</div>	
+
+	</div>
+
+	<div class="montage-block">
+		<span class="block" id="block2"></span>
+			<div class="thumb_content">
+			<h1>DJ ELLASKINS</h1>
+			<p>This is some sample title for text</p>
+			</div>	
+
+	</div>
+
+	<div class="montage-block">
+		<span class="block" id="block3"></span>
+			<div id="thumb_content" class="thumb_content2">
+			<h1><br><br><br>JOAHIM GARRAUND</h1>
+			<p>Is a dutch DJ and producer. With a great taste of music and skills.</p>
+			</div>	
+
+	</div>
+
+	<div class="montage-block">
+		<span class="block" id="block4"></span>
+			<div class="thumb_content">
+			<h1>THE MANEKEN</h1>
+			<p>This is some sample title for text</p>
+			</div>	
+
+	</div>
+
+	<div class="montage-block">
+		<span class="block" id="block5"></span>
+			<div class="thumb_content">
+			<h1>DJ PUCUY</h1>
+			<p>This is some sample title for text</p>
+			</div>	
+
+	</div>
+
+	<div class="montage-block">
+		<span class="block" id="block6"></span>
+			<div class="thumb_content">
+			<h1>ERICK MORILLO</h1>
+			<p>This is some sample title for text</p>
+			</div>	
+
+	</div>
+
+	<div class="montage-block">
+		<span class="block" id="block7"></span>
+			<div class="thumb_content">
+			<h1>ARMIN VAN BUREEN</h1>
+			<p>This is some sample title for text</p>
+			</div>	
+
+	</div>
+
+	<div class="montage-block">
+		<span class="block" id="block8"></span>
+			<div class="thumb_content">
+			<h1>DJ YAMATO</h1>
+			<p>This is some sample title for text</p>
+			</div>	
+
+	</div>
+
+
+</div>
+</section>
+
+
+</body>
+</html>

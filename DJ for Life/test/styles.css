@@ -1,0 +1,317 @@
+body { font: 13px sans-serif; overflow-y: hidden; }
+
+	@font-face {
+    font-family: MoonHouse;
+    src: url(moonhouse.ttf) }
+
+    #imglogo{
+
+    	margin: 0 auto;
+    	background-image:url("masterdj.jpg");
+    	height: 200px;
+    	width: 200px;
+    	background-size: cover;
+    	display:block;
+    }
+
+    @media all and (min-width: 480px) {
+    	#imglogo{
+    		width: 300px;
+    		height: 300px;
+    	}
+    }
+
+
+	#logo{
+
+		padding-left: 40%;
+		text-align: center;
+		position:fixed;
+		font-family: 'Helvetica';
+		text-shadow: 2px 3px #ff0000;
+		font-size:60px;
+		padding-top:50px; 
+		font-weight: bold;
+		
+
+	}
+
+	#montage-wrap { 
+		white-space: nowrap;
+		width: 100%; 
+		margin:auto;  
+		overflow-x: auto; 
+		overflow-y: hidden; 
+		position:relative; 
+	}
+
+	.button {
+		position:absolute;
+		top:10px;
+		width:35px;
+		height:35px;
+		z-index:0;
+	}
+
+	.backbutton {
+		transform: rotate(180deg);
+		left:0;
+
+	}
+	.forwardbutton {
+		right:0;
+  }
+
+	.montage-block { 
+		white-space: normal;
+		display: inline-block;
+		width: 320px; 
+		height: 340px;
+		overflow: hidden; 
+		position:relative; 
+		padding-left: 1px; 
+	}
+
+		@media all and (min-width:480px) {
+		.montage-block {
+			width:586px;
+			height:600px;
+		}
+	}
+
+
+	#block1 {background-image: url("rik.jpg")  ;}
+
+	#block2 {background-image: url("ellaskins.jpg")  ;}
+
+	#block3 {background-image: url("joahim.jpg")  ;}
+
+	#block4 {background-image: url("maneken.jpg")  ;}
+
+	#block5 {background-image: url("pucuy.jpg")  ;}
+
+	#block6 {background-image: url("morillo.jpg")  ;}
+
+	#block7 {background-image: url("bureen.jpg")  ;}
+
+	#block8 {background-image: url("yamato.jpg")  ;}
+
+		.block {width: 100%; height: 100%; position:absolute; display:block; border:none;
+		transition:	.5s ease-in-out; background-size:cover; background-repeat: no-repeat; }
+
+
+
+
+	.montage-block:hover .block	{ margin-top: -550px; }	
+	
+	.thumb_content1	{ padding: 250px 15px 0 15px; color: #777; background-image:url("parkinson.jpg"); background-repeat:no-repeat; }
+
+	.thumb_content	{ padding: 250px 15px 0 15px; color: #777; background-image:url(""); background-repeat:no-repeat; }
+	.thumb_content h1	{ margin: 50 0 5px 0; color: #666; font-size: 14px; }
+
+
+/*	body, html{
+    height:100%;
+}
+body{
+    padding:0;
+    margin:0;
+}*/
+h1, p, li{
+    font-family:'helvetica neue', helvetica, arial, sans-serif;
+    color:#222;
+    margin:0 0 1em;
+}
+.section li{
+    margin:0 0 10px;
+}
+/*h1{
+    font-size:2.5em;
+    font-weight:300;
+}
+p{
+    font-size:1em;
+    line-height:1.5em;
+}
+.wrapper{
+    overflow:hidden;
+}*/
+.section{
+	position:relative;
+    padding:0;
+    padding-top: 60px;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+
+}
+
+.section:first-of-type {
+	padding-top: 0;
+}
+nav{
+	z-index:999;
+    position:fixed;
+    top:0;
+    left:0;
+    width:250px;
+    height:100%;
+    margin:0 0 0 -250px;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+}
+nav ul{
+    width:250px;
+    height:100%;
+    padding:0;
+    margin:0;
+    list-style:none;
+    background:#222;
+    overflow:hidden;
+}
+nav li{
+    margin:0;
+}
+nav a{
+    color:#fff;
+    font-size:1em;
+    font-family:'helvetica neue', helvetica, arial, sans-serif;
+    text-decoration:none;
+    display:block;
+    padding:12px 15px;
+    font-weight:300;
+    letter-spacing:2px;
+    border-bottom:1px solid #333;
+}
+nav a:hover{
+    background:#111;
+}
+.menu-button{
+    display:block;
+    font-family:'helvetica neue', helvetica, arial, sans-serif;
+    font-weight:700;
+    background:#262626;
+    width:42px;
+    height:42px;
+    line-height:42px;
+    color:#fff;
+    text-align:center;
+    font-size:2em;
+    line-height:1.1em;
+    position:fixed;
+    top:10px;
+    left:10px;
+    -moz-transition:all 200ms ease-in;
+    -webkit-transition:all 200ms ease-in;
+    -o-transition:all 200ms ease-in;
+    transition:all 200ms ease-in;
+    z-index:500;
+    border: none;
+}
+
+/*.footer{
+    text-align: center;
+    width:100%;
+    height:5%;
+    background-color: grey;
+}*/
+
+input[type="checkbox"]{
+    display:none;
+}
+input[type="checkbox"]:checked ~ nav,
+._sidebar-active nav {
+    margin:0;
+}
+input[type="checkbox"]:checked ~ label, 
+._sidebar-active .menu-button {
+    left:260px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+input[type="checkbox"]:checked ~ .section,
+._sidebar-active .section {
+    -webkit-transform:translate3d(260px, 0, 0);
+    -moz-transform:translate3d(260px, 0, 0);
+    -o-transform:translate3d(260px, 0, 0);
+    transform:translate3d(260px, 0, 0);
+}
+
+ .sidebar-overlay,
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index:999;
+}
+
+.sidebar-overlay {
+  z-index:499;
+  cursor: pointer;
+}
+
+
+ ._sidebar-active .sidebar-overlay,
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;*/
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+.content{
+	font-size: 15px;
+}
+
+
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
