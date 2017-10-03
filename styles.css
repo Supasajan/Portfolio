@@ -25,6 +25,13 @@ html, body{
 	background-size: contain;
 	background-repeat: no-repeat;
 	padding-bottom: 20px;
+	z-index:997;
+}
+
+#sign{
+	background: url("sign.jpg") repeat 0 0;
+	z-index:998;
+	position:absolute;
 }
 
 #main{
@@ -35,6 +42,7 @@ html, body{
 	position:relative;
 	float:left;
 	overflow-x: scroll;
+	z-index:999;
 }
 #footer{
 	min-width:100%;
