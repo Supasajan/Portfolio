@@ -22,7 +22,8 @@ html, body{
 	width:1000px;
 	background: url("pf.jpg") repeat 0 0;
 	object-fit: contain;
-	background-size: cover;
+	background-size: contain;
+	background-repeat: no-repeat;
 	padding-bottom: 20px;
 }
 
@@ -123,5 +124,23 @@ html, body{
 #wrapper.img{
 	 border-radius: 8px;
 	 /*border: 1px solid #ddd;*/
+}
+
+@media only screen and (max-width: 1023px){
+	.block{
+		width:100%;
+		
+	}
+	#logo{
+		width:80%;
+		
+	}
+	#header{
+		height:10%;
+		
+	}
+	#footer{
+		height:30px;
+		
 }
 
