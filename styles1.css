@@ -57,9 +57,10 @@ a:visited {
 	padding-right:10px;
 	padding-top: 5px;
 
-
-
-
+}
+.apps{
+	bottom:0;
+	text-align: right;
 }
 
 
