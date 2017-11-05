@@ -1,0 +1,24 @@
+#topline {
+	width : 100%;
+	height: 10px;
+	background-color: #2d183d;
+	border-bottom: 3px solid #eeffb;
+	margin-bottom: 10px;
+}
+#bottom-line {
+	width:100%;
+	height:10px;
+	background-color:#2d183d;
+    bottom-top: 3px solid #eedffb;
+    
+}
+.centerize {
+	display:block;
+	margin:auto auto;
+}
+.centerize-text {
+	text-align:center;
+}
+.clear {
+	clear: both;
+}
