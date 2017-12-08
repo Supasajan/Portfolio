@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DJ for Life</title>
+	<style type="text/css">
+	body {font: 13px sans-serif; }
+
+	#montage-wrap{ width:820px; height:1000px; }
+
+	.montage-block: {width:1600px; height:1000px; float:left; display:block; overflow:hidden; position:relative; margin:0 4px 0 0; background:white; border: 1px solid #666;}
+
+	.montage-block:last-child    { margin: 0; }
+
+	#block1 {width:800px; height:600px; position:absolute;
+		display: block; background: url("skull.jpg") no-repeat; 
+		
+		-webkit-transition: top .3s ease-in-out;}
+
+
+	.montage-block:hover #block1	{ top: -150px; }
+
+	.thumb_content	{ padding: 70px 15px 0 15px; color: #777; }
+	.thumb_content h1	{ margin: 0 0 5px 0; color: #666; font-size: 14px; }
+
+	</style>
+</head>
+<body>
+
+<div id="montage-wrap">
+
+	<div class="montage block">
+		<span id="block1"></span>
+				<div class="thumb_content">
+					<h1> Sample Title</h1>
+					<p>This is paragraph</p>
+                </div>
+    </div>
+
+</div>
+
+</body>
+</html>
