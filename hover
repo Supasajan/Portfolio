@@ -1,0 +1,6 @@
+$(document).ready(function(){
+ $('#popup1').bind({
+  mouseenter: function(e) {
+  // Hover event handler
+   alert("hover");
+  },
